@@ -1,0 +1,10 @@
+FROM centos:7
+
+ENV FLAVOR=rpmbuild OS=centos DIST=el7
+
+RUN yum -y --nogpgcheck install yum-utils \
+    gcc gcc-c++ libtool libtool-ltdl make \
+    cmake git pkgconfig automake autoconf \
+    rpm-build 
+
+RUN yum -y clean all
