@@ -2,7 +2,6 @@ FROM ubuntu
 
 RUN apt-get update \
     && apt-get install -y \
-    epel-release \
     createrepo \
     yum-utils \
     pure-ftpd \
