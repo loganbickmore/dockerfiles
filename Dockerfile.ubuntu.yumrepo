@@ -5,6 +5,5 @@ RUN apt-get update \
     createrepo \
     yum-utils \
     pure-ftpd \
-    httpd \
     nginx \
     && rm -rf /var/lib/apt/lists/*
