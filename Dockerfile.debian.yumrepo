@@ -1,0 +1,21 @@
+FROM stilliard/pure-ftpd:hardened
+
+#properly setup debian sources
+ENV DEBIAN_FRONTEND noninteractive
+RUN echo "deb http://http.debian.net/debian stretch main\n\
+deb-src http://http.debian.net/debian stretch main\n\
+deb http://http.debian.net/debian stretch-updates main\n\
+deb-src http://http.debian.net/debian stretch-updates main\n\
+deb http://security.debian.org stretch/updates main\n\
+deb-src http://security.debian.org stretch/updates main\n\
+" > /etc/apt/sources.list
+
+# Unset parent containers ENTRYPOINT and CMD
+ENTRYPOINT []
+CMD []
+
+RUN apt-get -y update \
+    && apt-get install -y \
+    createrepo \
+    yum-utils \
+    && rm -rf /var/lib/apt/lists/*
