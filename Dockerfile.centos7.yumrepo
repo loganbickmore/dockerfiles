@@ -1,11 +1,8 @@
 FROM centos:7
 RUN yum -y --nogpgcheck install epel-release
 RUN yum -y --nogpgcheck install \
-    yum-utils \
-    createrepo \
-    nginx \
-    httpd \
-    openssh-server \
-    pwgen \
+    yum-utils createrepo \
+    nginx httpd \
+    openssh-server openssh-clients pwgen \
     && yum -y clean all
  
