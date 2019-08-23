@@ -3,6 +3,8 @@ RUN yum -y --nogpgcheck install epel-release
 RUN yum -y --nogpgcheck install \
     yum-utils createrepo \
     nginx httpd \
-    openssh-server openssh-clients pwgen \
+    openssh-server openssh-clients \
+    rsync \
+    pwgen \
     && yum -y clean all
  
